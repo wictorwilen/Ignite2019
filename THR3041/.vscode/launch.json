@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "edge",
+            "request": "attach",
+            "name": "Client",
+            "port": 9222,
+            "sourceMaps": true,
+            "trace": "verbose",
+            "webRoot": "${workspaceFolder}\\dist\\web"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Server",
+            "processId": "${command:PickProcess}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Server/Client",
+            "configurations": [
+                "Server",
+                "Client"
+            ]
+        }
+    ]
+}

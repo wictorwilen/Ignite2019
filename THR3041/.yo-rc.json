@@ -1,0 +1,11 @@
+{
+  "generator-teams": {
+    "promptValues": {
+      "developer": "Wictor Wilen",
+      "unitTestsEnabled": false,
+      "useAzureAppInsights": true
+    },
+    "libraryName": "thr3041",
+    "generator-version": "2.12.0-preview"
+  }
+}
