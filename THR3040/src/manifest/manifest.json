@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "id": "2634e520-f4a6-11e9-8097-d5134dd1f0d5",
+  "version": "0.0.1",
+  "packageName": "thr3040",
+  "developer": {
+    "name": "Wictor Wilen",
+    "websiteUrl": "https://{{HOSTNAME}}",
+    "privacyUrl": "https://{{HOSTNAME}}/privacy.html",
+    "termsOfUseUrl": "https://{{HOSTNAME}}/tou.html"
+  },
+  "name": {
+    "short": "THR3040",
+    "full": "THR3040"
+  },
+  "description": {
+    "short": "TODO: add short description here",
+    "full": "TODO: add full description here"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#ff9349",
+  "configurableTabs": [],
+  "staticTabs": [],
+  "bots": [],
+  "connectors": [],
+  "composeExtensions": [
+    {
+      "botId": "{{MICROSOFT_APP_ID}}",
+      "canUpdateConfiguration": true,
+      "commands": [
+        {
+          "id": "plannerTasksMessageExtension",
+          "title": "Planner Tasks",
+          "description": "Insert a Planner task card",
+          "initialRun": true,
+          "parameters": [
+            {
+              "name": "parameter",
+              "description": "Planner task name",
+              "title": "Title"
+            }
+          ],
+          "type": "query"
+        },
+        {
+          "id": "createTaskMessageExtension",
+          "title": "Create task",
+          "description": "Create a task from current message",
+          "initialRun": true,
+          "type": "action",
+          "context": [
+            "message"
+          ],
+          "fetchTask": true
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "{{HOSTNAME}}"
+  ]
+}
